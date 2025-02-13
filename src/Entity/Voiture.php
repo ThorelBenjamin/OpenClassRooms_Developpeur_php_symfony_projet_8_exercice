@@ -30,7 +30,7 @@ class Voiture
     private ?int $nombre_de_place = null;
 
     #[ORM\Column]
-    private ?bool $boite_de_vitesse = null;
+    private ?bool $manuelle = null;
 
     public function getId(): ?int
     {
@@ -97,14 +97,14 @@ class Voiture
         return $this;
     }
 
-    public function isBoiteDeVitesse(): ?bool
+    public function isManuelle(): ?bool
     {
-        return $this->boite_de_vitesse;
+        return $this->manuelle;
     }
 
-    public function setBoiteDeVitesse(bool $boite_de_vitesse): static
+    public function setManuelle(bool $manuelle): static
     {
-        $this->boite_de_vitesse = $boite_de_vitesse;
+        $this->manuelle = $manuelle;
 
         return $this;
     }
