@@ -21,16 +21,16 @@ class Voiture
     private ?string $description = null;
 
     #[ORM\Column]
-    private ?int $prix_mensuel = null;
+    private ?float $prix_mensuel = null;
 
     #[ORM\Column]
-    private ?int $prix_journalier = null;
+    private ?float $prix_journalier = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $nombre_de_place = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $boite_de_vitesse = null;
+    #[ORM\Column]
+    private ?bool $boite_de_vitesse = null;
 
     public function getId(): ?int
     {
@@ -61,24 +61,24 @@ class Voiture
         return $this;
     }
 
-    public function getPrixMensuel(): ?int
+    public function getPrixMensuel(): ?float
     {
         return $this->prix_mensuel;
     }
 
-    public function setPrixMensuel(int $prix_mensuel): static
+    public function setPrixMensuel(float $prix_mensuel): static
     {
         $this->prix_mensuel = $prix_mensuel;
 
         return $this;
     }
 
-    public function getPrixJournalier(): ?int
+    public function getPrixJournalier(): ?float
     {
         return $this->prix_journalier;
     }
 
-    public function setPrixJournalier(int $prix_journalier): static
+    public function setPrixJournalier(float $prix_journalier): static
     {
         $this->prix_journalier = $prix_journalier;
 
@@ -97,12 +97,12 @@ class Voiture
         return $this;
     }
 
-    public function getBoiteDeVitesse(): ?string
+    public function isBoiteDeVitesse(): ?bool
     {
         return $this->boite_de_vitesse;
     }
 
-    public function setBoiteDeVitesse(string $boite_de_vitesse): static
+    public function setBoiteDeVitesse(bool $boite_de_vitesse): static
     {
         $this->boite_de_vitesse = $boite_de_vitesse;
 
